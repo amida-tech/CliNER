@@ -13,11 +13,11 @@ import tempfile
 import pycrfsuite
 
 
-from tools import compute_performance_stats
-from feature_extraction.read_config import enabled_modules
+from cliner.tools import compute_performance_stats
+from cliner.feature_extraction.read_config import enabled_modules
 
 cliner_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-tmp_dir = os.path.join(cliner_dir, 'data', 'tmp')
+tmp_dir = os.path.join('data', 'tmp')
 
 def format_features(rows, labels=None):
 

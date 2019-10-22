@@ -16,9 +16,9 @@ import numpy as np
 from time        import localtime, strftime
 from collections import defaultdict
 
-from notes.documents import labels as tag2id, id2tag
-from tools           import flatten, save_list_structure, reconstruct_list
-from tools           import print_str, print_vec, print_files, write
+from cliner.notes.documents import labels as tag2id, id2tag
+from cliner.tools           import flatten, save_list_structure, reconstruct_list
+from cliner.tools           import print_str, print_vec, print_files, write
 
 
 cliner_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -513,7 +513,7 @@ def generic_train(p_or_n, train_sents, train_labels, use_lstm, val_sents=None, v
         # CRF
         ########
 
-        from feature_extraction.features import extract_features
+        from cliner.feature_extraction.features import extract_features
 
         # vectorize tokenized sentences
         text_features = extract_features(train_sents)
@@ -687,7 +687,7 @@ def generic_predict(p_or_n, tokenized_sents, vocab, clf, use_lstm, hyperparams):
             #        id_seq.append(vocab['oov'])
           #  X.append(id_seq)
     else:
-        from feature_extraction.features import extract_features
+        from cliner.feature_extraction.features import extract_features
 
         # vectorize validation X
         text_features = extract_features(tokenized_sents)
@@ -703,7 +703,7 @@ def generic_predict(p_or_n, tokenized_sents, vocab, clf, use_lstm, hyperparams):
          
        
     else:
-        from machine_learning   import crf
+        from cliner.machine_learning   import crf
         predictions =   crf.predict(clf, X)
 
     # Format labels from output

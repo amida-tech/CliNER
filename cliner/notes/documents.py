@@ -13,7 +13,7 @@ import re
 import nltk
 import os
 
-from tools import clean_text, normalize_tokens
+from cliner.tools import clean_text, normalize_tokens
 
 
 labels = { 'O':0,

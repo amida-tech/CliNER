@@ -13,9 +13,10 @@ import argparse
 import itertools
 import pickle
 
-import tools
-from model import ClinerModel, write
-from notes.documents import Document
+import cliner.tools
+from cliner.model import ClinerModel, write
+from cliner.notes.documents import Document
+
 import copy
 
 def main():
@@ -90,7 +91,8 @@ def predict(files, model_path, output_dir, format, use_lstm=True):
     # Load model
     #if use_lstm==False: 
     with open(model_path, 'rb') as f:
-    	model = pickle.load(f, encoding='latin1')
+        sys.modules['model'] = cliner.model
+        model = pickle.load(f, encoding='latin1')
 
     if model._use_lstm:
         import helper_dataset as hd

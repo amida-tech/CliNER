@@ -17,7 +17,7 @@ import sys
 dname = os.path.dirname
 CLINER_DIR = dname(dname(dname(os.path.abspath(__file__))))
 tagger_name = 'py%d_maxent_treebank_pos_tagger.pickle' % sys.version_info.major
-pos_tagger_path = os.path.join(CLINER_DIR, 'tools', tagger_name)
+pos_tagger_path = os.path.join(CLINER_DIR, 'cliner', 'tools', tagger_name)
 
 
 def load_pickled_obj(path_to_pickled_obj):

@@ -22,8 +22,7 @@ import tempfile
 from subprocess import Popen, PIPE
 from .genia_cache import GeniaCache
 
-cliner_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-tmp_dir = os.path.join(cliner_dir, 'data', 'tmp')
+tmp_dir = os.path.join('data', 'tmp')
 
 def genia(geniatagger, data):
 

@@ -48,6 +48,8 @@ def load_parameters_from_file(parameters_file_name):
            d[key]=bool(val)
            continue
        d[key] = val
+    print('LSTM HELPERS')
+    print(d)
     return d 
 
 def is_number(s):

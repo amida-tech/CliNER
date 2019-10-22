@@ -12,7 +12,7 @@
 import os
 import sys
 
-CLINER_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), *["..", ".."])
+CLINER_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), *[".."])
 
 def enabled_modules():
     """
